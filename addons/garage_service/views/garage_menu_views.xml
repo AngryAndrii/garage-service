@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem name="Garage" id="garage_service_root" sequence="10">
+        <menuitem id="menu_garage_operations"
+                  name="Operations"
+                  sequence="10">
+            <menuitem id="menu_repair_order"
+                      name="Repair Orders"
+                      action="action_see_all_vehicles"
+                      sequence="10">
+            </menuitem>
+            <menuitem id="menu_garage_vehicle"
+                      name="Vehicles"
+                      action="action_see_all_vehicles"
+                      sequence="20">
+            </menuitem>
+        </menuitem>
+
+        <menuitem id="menu_garage_configuration"
+                  name="Configuration"
+                  sequence="20">
+            <menuitem id="menu_service_type"
+                      name="Services Types"
+                      sequence="10">
+            </menuitem>
+            <menuitem id="menu_garage_mechanics"
+                      name="Mechanics"
+                      sequence="20">
+            </menuitem>
+        </menuitem>
+    </menuitem>
+</odoo>
+
