@@ -10,7 +10,11 @@
     "depends": [
         "base",
     ],
-    "data": [],
+    "data": [
+        "security/ir.model.access.csv",
+        
+        "views/garage_menu_views.xml",
+    ],
     "application": True,
     "author": "Angry andrii",
     "license": "LGPL-3",
