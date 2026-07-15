@@ -12,3 +12,5 @@ odoo-data/
 
 config/*
 !config/odoo.conf.example
+addons/pretty_buttons
+venv
