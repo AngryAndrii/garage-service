@@ -1,2 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_garage_vehicle_user,Vehicle - User,garage_service.model_garage_vehicle,base.group_user,1,1,1,1
+access_garage_mechanic_user,Mechanic - User,garage_service.model_garage_mechanic,base.group_user,1,1,1,1
+access_garage_repair_line_user,Repair Line - User,garage_service.model_garage_repair_line,base.group_user,1,1,1,1
+access_garage_repair_order_user,Repair Order - User,garage_service.model_garage_repair_order,base.group_user,1,1,1,1
+access_garage_service_type_user,Service Type - User,garage_service.model_garage_service_type,base.group_user,1,1,1,1
