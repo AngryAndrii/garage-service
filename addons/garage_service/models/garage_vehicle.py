@@ -1,5 +1,8 @@
 from odoo import models, fields, api
+from odoo.exceptions import ValidationError
+from datetime import date
 
+MIN_YEAR = 1970
 
 class GarageVehicle(models.Model):
     _name = "garage.vehicle"
@@ -30,3 +33,18 @@ class GarageVehicle(models.Model):
     def _compute_name(self):
         for rec in self:
             rec.name = f"{rec.brand or ''} {rec.model or ''}".strip()
+
+    @api.constrains("mileage")
+    def _check_mileage(self):
+        for rec in self:
+            if rec.mileage < 0:
+                raise ValidationError("Mileage cannot be negative.")
+
+    @api.constrains("year")
+    def _check_year(self):
+        for rec in self:
+            if rec.year > date.today().year:
+                raise ValidationError("Year cannot be in the future.")
+
+            if rec.year < MIN_YEAR:
+                raise ValidationError("We can not get cars manufactured earlier than 1970.")
