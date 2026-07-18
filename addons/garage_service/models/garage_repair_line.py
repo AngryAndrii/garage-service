@@ -12,6 +12,7 @@ class GarageRepairLine(models.Model):
     price_unit = fields.Float()
     subtotal = fields.Float(compute="_compute_subtotal", store=True)
     currency_id = fields.Many2one(related="order_id.currency_id")
+    description = fields.Text()
     sequence = fields.Integer(store=True)
 
     @api.depends("price_unit", "qty")

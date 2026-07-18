@@ -7,6 +7,7 @@ MIN_YEAR = 1970
 class GarageVehicle(models.Model):
     _name = "garage.vehicle"
     _description = "Garage Vehicle"
+    _order = "name, id"
 
     name = fields.Char(string="Name", compute="_compute_name")
     brand = fields.Char(string="Brand", required=True)
