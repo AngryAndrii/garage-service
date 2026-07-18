@@ -12,6 +12,7 @@ class GarageRepairLine(models.Model):
     price_unit = fields.Float()
     subtotal = fields.Float(compute="_compute_subtotal", store=True)
     currency_id = fields.Many2one(related="order_id.currency_id")
+    description = fields.Text()
     sequence = fields.Integer(store=True)
 
     @api.depends("price_unit", "qty")
@@ -19,5 +20,11 @@ class GarageRepairLine(models.Model):
         for rec in self:
             rec.subtotal = rec.price_unit * rec.qty
 
-# SQL-constraint: price_unit >= 0, qty > 0.
-# Onchange: при виборі service_type_id → підставити price_unit з довідника.
+    _price_unit_positive = models.Constraint(
+        "CHECK(price_unit >= 0)",
+        "Ціна за одиницю не може бути від'ємною.",
+    )
+    _qty_positive = models.Constraint(
+        "CHECK(qty > 0)",
+        "Кількість має бути більшою за нуль.",
+    )

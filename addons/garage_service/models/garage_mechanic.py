@@ -4,6 +4,7 @@ from odoo import models, fields
 class GarageMechanic(models.Model):
     _name = 'garage.mechanic'
     _description = 'Garage Mechanic'
+    _order = "name"
 
     name = fields.Char(required=True)
     phone = fields.Char(required=True)
