@@ -6,12 +6,12 @@
                   sequence="10">
             <menuitem id="menu_repair_order"
                       name="Repair Orders"
-                      action="action_see_all_vehicles"
+                      action="action_vehicles"
                       sequence="10">
             </menuitem>
             <menuitem id="menu_garage_vehicle"
                       name="Vehicles"
-                      action="action_see_all_vehicles"
+                      action="action_vehicles"
                       sequence="20">
             </menuitem>
         </menuitem>

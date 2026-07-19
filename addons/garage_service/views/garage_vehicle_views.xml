@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="action_see_all_vehicles" model="ir.actions.act_window">
+    <record id="action_vehicles" model="ir.actions.act_window">
         <field name="name">Vehicles</field>
+        <field name="path">vehicles</field>
         <field name="res_model">garage.vehicle</field>
         <field name="view_mode">list,form</field>
         <field name="help">No vehicles found!</field>
+    </record>
+
+    <record id="vehicle_view_list" model="ir.ui.view">
+        <field name="name">garage.vehicle.list</field>
+        <field name="model">garage.vehicle</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="plate"/>
+                <field name="owner_id"/>
+                <field name="owner_phone"/>
+                <field name="repair_count"/>
+            </list>
+        </field>
     </record>
 </odoo>
