@@ -10,6 +10,7 @@
 
     <record id="service_view_list" model="ir.ui.view">
         <field name="name">garage.service.list</field>
+        <field name="model">garage.service.type</field>
         <field name="arch" type="xml">
             <list>
                 <field name="name"/>

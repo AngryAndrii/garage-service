@@ -16,6 +16,7 @@
         "views/garage_vehicle_views.xml",
         "views/garage_mechanic_views.xml",
         "views/garage_service_views.xml",
+        "views/garage_repair_order_veiws.xml",
         
         "views/garage_menu_views.xml",
     ],
