@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_mechanics" model="ir.actions.act_window">
+        <field name="name">Mechanics</field>
+        <field name="path">mechanics</field>
+        <field name="res_model">garage.mechanic</field>
+        <field name="view_mode">list,form</field>
+        <field name="help">No mechanics found!</field>
+    </record>
+
+    <record id="mechanic_view_list" model="ir.ui.view">
+        <field name="name">garage.mechanic.list</field>
+        <field name="model">garage.mechanic</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="phone"/>
+                <field name="specialization_ids"/>
+            </list>
+        </field>
+    </record>
+</odoo>

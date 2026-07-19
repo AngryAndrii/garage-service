@@ -9,7 +9,7 @@ class GarageVehicle(models.Model):
     _description = "Garage Vehicle"
     _order = "name, id"
 
-    name = fields.Char(string="Name", compute="_compute_name")
+    name = fields.Char(string="Name", compute="_compute_name", store=True)
     brand = fields.Char(string="Brand", required=True)
     model = fields.Char(string="Model", required=True)
     plate = fields.Char(string="Plate", required=True)
@@ -26,9 +26,10 @@ class GarageVehicle(models.Model):
     repair_order_ids = fields.One2many("garage.repair.order", inverse_name="vehicle_id")
     repair_count = fields.Integer(compute="_compute_repair_count")
 
+    @api.depends("repair_order_ids")
     def _compute_repair_count(self):
         for vehicle in self:
-            vehicle.repair_count = 0
+            vehicle.repair_count = len(vehicle.repair_order_ids)
 
     @api.depends("brand", "model")
     def _compute_name(self):
