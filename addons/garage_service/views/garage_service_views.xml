@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_services" model="ir.actions.act_window">
+        <field name="name">Services types</field>
+        <field name="path">services</field>
+        <field name="res_model">garage.service.type</field>
+        <field name="view_mode">list,form</field>
+        <field name="help">No services found!</field>
+    </record>
+
+    <record id="service_view_list" model="ir.ui.view">
+        <field name="name">garage.service.list</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="price"/>
+                <field name="duration"/>
+            </list>
+        </field>
+    </record>
+</odoo>

@@ -21,10 +21,12 @@
                   sequence="20">
             <menuitem id="menu_service_type"
                       name="Services Types"
+                      action="action_services"
                       sequence="10">
             </menuitem>
             <menuitem id="menu_garage_mechanics"
                       name="Mechanics"
+                      action="action_mechanics"
                       sequence="20">
             </menuitem>
         </menuitem>
