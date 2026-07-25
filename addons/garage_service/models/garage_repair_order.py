@@ -44,3 +44,9 @@ class GarageRepairOrder(models.Model):
         for order in self:
             if order.state == "done" and not order.line_ids:
                 raise ValidationError("Line ids cannot be empty for line ending")
+
+    def button_in_progress(self):
+        self.write({'state': "in_progress"})
+
+    def button_cancel(self):
+        self.write({'state': "cancelled"})
