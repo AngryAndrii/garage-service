@@ -21,4 +21,21 @@
             </list>
         </field>
     </record>
+
+    <record model="ir.ui.view" id="appointment_form_view">
+        <field name="name">repair.order.form</field>
+        <field name="model">garage.repair.order</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,in_progress,done,cancelled"/>
+                    <button name="button_in_progress" class="oe_highlight" invisible="state != 'draft'"
+                            string="In Progress"
+                            type="object" help="Move Appointment to In Progress state"/>
+                    <button name="button_cancel" class="oe_highlight" invisible="state != 'in_progress'" string="Cancel"
+                            type="object" help="Move Appointment to In Progress state"/>
+                </header>
+            </form>
+        </field>
+    </record>
 </odoo>
