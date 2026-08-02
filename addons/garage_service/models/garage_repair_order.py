@@ -14,7 +14,7 @@ class GarageRepairOrder(models.Model):
     _description = "Garage Repair Order"
     _order = "date_received, state"
 
-    name = fields.Char(string="Name")
+    name = fields.Char(string="Order name")
     vehicle_id = fields.Many2one("garage.vehicle", required=True, ondelete="restrict")
     mechanic_id = fields.Many2one("garage.mechanic")
     owner_id = fields.Many2one(related="vehicle_id.owner_id", store=True)
@@ -25,7 +25,7 @@ class GarageRepairOrder(models.Model):
     in_warranty = fields.Boolean(default=False)
     line_ids = fields.One2many("garage.repair.line", inverse_name="order_id")
     currency_id = fields.Many2one("res.currency", string="Currency", required=True)
-    amount_total = fields.Monetary(compute="_compute_amount_total", store=True)
+    amount_total = fields.Monetary(compute="_compute_amount_total", store=True, string="Total")
 
     @api.depends("line_ids.subtotal")
     def _compute_amount_total(self):
@@ -50,3 +50,6 @@ class GarageRepairOrder(models.Model):
 
     def button_cancel(self):
         self.write({'state': "cancelled"})
+
+    def button_done(self):
+        self.write({'state': "done"})
