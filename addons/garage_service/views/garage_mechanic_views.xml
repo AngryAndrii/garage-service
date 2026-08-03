@@ -19,4 +19,20 @@
             </list>
         </field>
     </record>
+
+    <record id="mechanic_view_form" model="ir.ui.view">
+        <field name="name">mechanic.form</field>
+        <field name="model">garage.mechanic</field>
+        <field name="arch" type="xml">
+            <form>
+                <field name="name"/>
+                <field name="phone"/>
+                <field name="email"/>
+                <field name="photo" widget="contact_image"
+                       options="{'preview_image': 'photo', 'size': [130,130], 'img_class': 'rounded border'}"/>
+                <field name="photo" invisible="1"/>
+                <field name="specialization_ids" widget="many2many_tags"/>
+            </form>
+        </field>
+    </record>
 </odoo>
