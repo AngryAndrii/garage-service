@@ -6,7 +6,7 @@ class GarageMechanic(models.Model):
     _description = 'Garage Mechanic'
     _order = "name"
 
-    name = fields.Char(required=True)
+    name = fields.Char(required=True, string="Mechanic")
     phone = fields.Char(required=True)
     email = fields.Char()
     hire_date = fields.Date()
